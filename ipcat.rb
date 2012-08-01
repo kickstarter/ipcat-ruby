@@ -3,11 +3,13 @@
 # Ruby lib for https://github.com/client9/ipcat/
 
 require 'ipaddr'
+require 'open-uri'
+require 'bsearch'
 
 class IPCat
-  class < self
+  class << self
     def matches?(ip)
-      BSearch.bsearch(parse(ip), ranges)
+      BSearch.bsearch(ip_to_fixnum(ip), ranges)
     end
 
     def ip_to_fixnum(ip)
@@ -16,6 +18,14 @@ class IPCat
 
     def ranges
       @ranges ||= []
+    end
+
+    def load!(path='https://raw.github.com/client9/ipcat/master/datacenters.csv')
+      open(path).readlines.each do |line|
+        next if line =~/\s*#/
+          first, last = line.split(',')[0,2]
+        IPRange.new(first, last)
+      end
     end
   end
 
@@ -36,13 +46,13 @@ class IPCat
 
     def <=>(obj)
       case obj
+      when Fixnum
+        compare_with_fixnum(obj)
       when String
         compare_with_fixnum(IPAddr.new(obj).to_i)
       when IPRange
         # Assume all IPRanges are non-overlapping
         first <=> obj.first
-      when Fixnum
-        compare_with_fixnum(obj)
       end
     end
 
