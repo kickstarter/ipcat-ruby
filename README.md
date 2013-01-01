@@ -1,8 +1,8 @@
-= ipcat
+# ipcat
 
 A ruby port of the [ipcat](https://github.com/client9/ipcat) library to classify IP addresses from known datacenters
 
-== Installation
+## Installation
 
 With bundler:
 
@@ -13,7 +13,7 @@ Or with rubygems:
 
     gem install ipcat
 
-== Usage
+## Usage
 
     IPCat.matches?(ip_address)
 
