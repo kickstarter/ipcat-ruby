@@ -12,7 +12,6 @@ class IPCat
     def datacenter?(ip)
       bsearch(ip_to_integer(ip))
     end
-    alias_method :matches?, :datacenter?
 
     def ip_to_integer(ip)
       Integer === ip ? ip : IPAddr.new(ip).to_i
