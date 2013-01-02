@@ -16,7 +16,7 @@ describe 'IPCat::IPRange' do
     end
   end
 
-  describe '#<=> for fixnums' do
+  describe '#<=> for integers' do
     it("should match first")   { (range <=> range.first).must_equal 0 }
     it("should match last")    { (range <=> range.last).must_equal 0 }
     it("should match first-1") { (range <=> range.first - 1).must_equal 1 }

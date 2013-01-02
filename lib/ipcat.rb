@@ -10,11 +10,11 @@ require 'ipcat/version'
 class IPCat
   class << self
     def matches?(ip)
-      bsearch(ip_to_fixnum(ip))
+      bsearch(ip_to_integer(ip))
     end
 
-    def ip_to_fixnum(ip)
-      Fixnum === ip ? ip : IPAddr.new(ip).to_i
+    def ip_to_integer(ip)
+      Integer === ip ? ip : IPAddr.new(ip).to_i
     end
 
     def ranges
