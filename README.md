@@ -15,14 +15,14 @@ Or with rubygems:
 
 ## Usage
 
-    IPCat.matches?(ip_address)
+    IPCat.datacenter?(ip_address)
 
 It will return an IPCat::IPRange if ip_address is from a known datacenter; nil otherwise.
 
 For example,
 
-    range = IPCat.matches?('8.18.145.0') # => instance of IPCat::IPRange
+    range = IPCat.datacenter?('8.18.145.0') # => instance of IPCat::IPRange
     range.name # => 'Amazon AWS'
 
-    IPCat.matches?('127.0.0.1') # => nil
+    IPCat.datacenter?('127.0.0.1') # => nil
 
