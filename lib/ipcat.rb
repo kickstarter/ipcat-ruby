@@ -55,13 +55,13 @@ class IPCat
       return nil if last < first # not found, or empty range
 
       cur = first + (last - first)/2
-      case ranges[cur] <=> needle
+      case haystack[cur] <=> needle
       when -1 # needle is larger than cur value
         bsearch(needle, haystack, cur+1, last)
       when 1 # needle is smaller than cur value
         bsearch(needle, haystack, first, cur-1)
       when 0
-        ranges[cur]
+        haystack[cur]
       end
     end
   end
