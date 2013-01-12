@@ -29,3 +29,8 @@ For example,
 
     IPCat.datacenter?('127.0.0.1') # => nil
 
+## License
+
+Copyright (c) 2013 Kickstarter, Inc
+
+Released under an [MIT License](http://opensource.org/licenses/MIT)
