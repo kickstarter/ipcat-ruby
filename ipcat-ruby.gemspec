@@ -19,8 +19,8 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 1.9.3' # Maybe less?
 
-  s.add_development_dependency 'minitest'
+  s.add_development_dependency 'minitest', ">= 4.4.0"
   s.add_development_dependency 'rake'
   s.add_development_dependency 'ruby-prof'
-  s.add_development_dependency 'debugger', '~> 1.1.3'
+  s.add_development_dependency 'debugger', '>= 1.1.3'
 end
