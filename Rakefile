@@ -10,6 +10,7 @@ end
 
 task :default => :test
 
+desc 'Regenerate data/datacenters'
 task :generate_dataset do
 
   $:.unshift './lib'
