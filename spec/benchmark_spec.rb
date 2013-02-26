@@ -25,7 +25,9 @@ describe 'IPCat.bsearch' do
   it("should be logarithmic") do
     assert_performance_logarithmic 0.95 do |n|
       IPCat.reset_ranges!(@ranges[n])
-      @ips.each { |ip| IPCat.bsearch(ip) }
+      @ips.each { |ip|
+        10.times { IPCat.bsearch(ip) }
+      }
     end
   end
 
