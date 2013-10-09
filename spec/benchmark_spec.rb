@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
 require 'minitest/benchmark'
 
-describe 'IPCat.bsearch' do
+describe 'IPCat.bsearch Benchmark' do
 
   # Makes +n+ IPRanges
   def make_ranges(n)
@@ -16,7 +16,7 @@ describe 'IPCat.bsearch' do
 
   before do
     @ips = 1000.times.map{ rand(2**32) }
-    @ranges = MiniTest::Spec.bench_range.inject({}) {|h, n|
+    @ranges = bench_range.inject({}) {|h, n|
       h[n] = make_ranges(n)
       h
     }
