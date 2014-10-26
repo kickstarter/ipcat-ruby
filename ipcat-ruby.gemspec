@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.summary = %q{dataset for categorizing IP addresses in ruby}
   s.test_files = Dir.glob("spec/**/*")
 
-  s.required_ruby_version = '>= 1.9.3' # Maybe less?
+  s.required_ruby_version = '>= 2.0.0' # For Array#bsearch
 
   s.add_development_dependency 'minitest', ">= 4.4.0"
   s.add_development_dependency 'rake'

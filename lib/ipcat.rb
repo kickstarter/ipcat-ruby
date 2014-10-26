@@ -10,7 +10,8 @@ require 'ipcat/version'
 class IPCat
   class << self
     def datacenter?(ip)
-      bsearch(ip_to_integer(ip))
+      ip_as_int = ip_to_integer(ip)
+      ranges.bsearch {|range| range <=> ip_as_int }
     end
     alias_method :classify, :datacenter?
 
@@ -47,21 +48,6 @@ class IPCat
       @ranges.freeze
     rescue
       load_csv!
-    end
-
-    # Assume ranges is an array of comparable objects
-    def bsearch(needle, haystack=ranges, first=0, last=ranges.size-1)
-      return nil if last < first # not found, or empty range
-
-      cur = first + (last - first)/2
-      case haystack[cur] <=> needle
-      when -1 # needle is larger than cur value
-        bsearch(needle, haystack, cur+1, last)
-      when 1 # needle is smaller than cur value
-        bsearch(needle, haystack, first, cur-1)
-      when 0
-        haystack[cur]
-      end
     end
   end
 end
