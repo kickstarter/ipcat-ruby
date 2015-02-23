@@ -1,6 +1,7 @@
 require "rubygems"
 require "bundler/setup"
-require 'rake/testtask'
+require "bundler/gem_tasks"
+require "rake/testtask"
 
 $:.unshift './lib'
 require 'ipcat'
