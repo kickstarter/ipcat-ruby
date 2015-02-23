@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+## v2.0.2 - 23 February 2015
+
+- Update datacenters
+
 ## v2.0.1 - 27 October 2014
 
  - revert ruby 2.0 requirement and custom `bsearch` method (it didn't work)
