@@ -2,6 +2,14 @@
 
 ## master (unreleased)
 
+## v2.0.4 - 19 August 2015
+
+- Update datacenters ([#8](https://github.com/kickstarter/ipcat-ruby/pull/8))
+
+## v2.0.3 - 27 July 2015
+
+- Update datacenters
+
 ## v2.0.2 - 23 February 2015
 
 - Update datacenters
