@@ -30,7 +30,7 @@ class IPCat
       reset_ranges!
 
       require 'open-uri'
-      open(path).readlines[1..-1].each do |line|
+      open(path).readlines.each do |line|
         first, last, name, url = line.split(',')
         self.ranges << IPRange.new(first, last, name, url).freeze
       end
