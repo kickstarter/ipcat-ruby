@@ -1,6 +1,7 @@
 # Changlog
 
-## master (unreleased)
+See [Releases](https://github.com/kickstarter/ipcat-ruby/releases) for new
+changes.
 
 ## v2.0.4 - 19 August 2015
 
