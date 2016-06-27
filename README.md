@@ -24,7 +24,7 @@ It will return an IPCat::IPRange if ip_address is from a known datacenter; nil o
 
 For example,
 
-    range = IPCat.datacenter?('8.18.145.0') # => instance of IPCat::IPRange
+    range = IPCat.datacenter?('52.95.252.0') # => instance of IPCat::IPRange
     range.name # => 'Amazon AWS'
 
     IPCat.datacenter?('127.0.0.1') # => nil
