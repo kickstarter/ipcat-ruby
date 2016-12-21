@@ -10,7 +10,7 @@ require 'ipcat/version'
 class IPCat
   class << self
     def datacenter?(ip)
-      load! unless @loaded
+      load! if ranges.empty?
       bsearch(ip_to_integer(ip))
     end
     alias_method :classify, :datacenter?
@@ -36,8 +36,6 @@ class IPCat
         self.ranges << IPRange.new(first, last, name, url).freeze
       end
       self.ranges.freeze
-
-      @loaded = true
     end
 
     def load!(path=nil)
@@ -48,8 +46,6 @@ class IPCat
       @ranges = Marshal.load(File.read(path))
       @ranges.each(&:freeze)
       @ranges.freeze
-
-      @loaded = true
     rescue
       load_csv!
     end
