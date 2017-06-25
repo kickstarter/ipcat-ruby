@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ##
 # IPCat
 # Ruby lib for https://github.com/client9/ipcat/
@@ -6,13 +8,12 @@ require 'ipaddr'
 require 'ipcat/iprange'
 require 'ipcat/version'
 
-
 class IPCat
   class << self
     def datacenter?(ip)
       bsearch(ip_to_integer(ip))
     end
-    alias_method :classify, :datacenter?
+    alias classify datacenter?
 
     def ip_to_integer(ip)
       Integer === ip ? ip : IPAddr.new(ip).to_i
@@ -26,15 +27,15 @@ class IPCat
       @ranges = new_ranges
     end
 
-    def load_csv!(path='https://raw.github.com/client9/ipcat/master/datacenters.csv')
+    def load_csv!(path = 'https://raw.github.com/client9/ipcat/master/datacenters.csv')
       reset_ranges!
 
       require 'open-uri'
       open(path).readlines.each do |line|
         first, last, name, url = line.split(',')
-        self.ranges << IPRange.new(first, last, name, url).freeze
+        ranges << IPRange.new(first, last, name, url).freeze
       end
-      self.ranges.freeze
+      ranges.freeze
     end
 
     def load!
@@ -50,15 +51,15 @@ class IPCat
     end
 
     # Assume ranges is an array of comparable objects
-    def bsearch(needle, haystack=ranges, first=0, last=ranges.size-1)
+    def bsearch(needle, haystack = ranges, first = 0, last = ranges.size - 1)
       return nil if last < first # not found, or empty range
 
-      cur = first + (last - first)/2
+      cur = first + (last - first) / 2
       case haystack[cur] <=> needle
       when -1 # needle is larger than cur value
-        bsearch(needle, haystack, cur+1, last)
+        bsearch(needle, haystack, cur + 1, last)
       when 1 # needle is smaller than cur value
-        bsearch(needle, haystack, first, cur-1)
+        bsearch(needle, haystack, first, cur - 1)
       when 0
         haystack[cur]
       end

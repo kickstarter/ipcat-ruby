@@ -1,7 +1,9 @@
-require "rubygems"
-require "bundler/setup"
+# frozen_string_literal: true
 
-require "minitest/autorun"
-require "minitest/pride"
+require 'rubygems'
+require 'bundler/setup'
 
-require "ipcat"
+require 'minitest/autorun'
+require 'minitest/pride'
+
+require 'ipcat'
