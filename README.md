@@ -2,8 +2,8 @@
 
 A ruby port of the [ipcat](https://github.com/client9/ipcat) library to classify IP addresses from known datacenters
 
-[![Build Status](https://travis-ci.org/kickstarter/ipcat-ruby.png?branch=master)](https://travis-ci.org/kickstarter/ipcat-ruby)
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/kickstarter/ipcat-ruby)
+[![Build Status](https://travis-ci.org/kickstarter/ipcat-ruby.svg?branch=master)](https://travis-ci.org/kickstarter/ipcat-ruby)
+[![Code Climate](https://img.shields.io/codeclimate/github/kickstarter/ipcat-ruby.svg?style=flat)](https://codeclimate.com/github/kickstarter/ipcat-ruby)
 
 ## Installation
 
