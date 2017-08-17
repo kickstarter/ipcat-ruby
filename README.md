@@ -9,25 +9,33 @@ A ruby port of the [ipcat](https://github.com/client9/ipcat) library to classify
 
 With bundler:
 
+```ruby
     # In Gemfile
     gem 'ipcat'
+```
 
 Or with rubygems:
 
+```shell
     gem install ipcat
+```
 
 ## Usage
 
+```ruby
     IPCat.datacenter?(ip_address)
+```
 
-It will return an IPCat::IPRange if ip_address is from a known datacenter; nil otherwise.
+It will return an `IPCat::IPRange` if `ip_address` is from a known datacenter; `nil` otherwise.
 
 For example,
 
+```ruby
     range = IPCat.datacenter?('52.95.252.0') # => instance of IPCat::IPRange
     range.name # => 'Amazon AWS'
 
     IPCat.datacenter?('127.0.0.1') # => nil
+```
 
 ## License
 
