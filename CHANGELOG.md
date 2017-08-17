@@ -1,4 +1,4 @@
-# Changlog
+# Changelog
 
 See [Releases](https://github.com/kickstarter/ipcat-ruby/releases) for new
 changes.
