@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 class IPCat
   class IPRange
-
     attr_accessor :first, :last, :name, :url
 
-    def initialize(first, last, name=nil, url=nil)
+    def initialize(first, last, name = nil, url = nil)
       @first = IPCat.ip_to_integer(first)
       @last  = IPCat.ip_to_integer(last)
-      @name, @url = name, url
-      raise ArgumentError.new("first must be <= last") if @first > @last
+      @name = name
+      @url = url
+      raise ArgumentError, 'first must be <= last' if @first > @last
     end
 
     def <=>(obj)
@@ -21,6 +23,7 @@ class IPCat
     end
 
     protected
+
     def compare_with_integer(i)
       if first > i
         1

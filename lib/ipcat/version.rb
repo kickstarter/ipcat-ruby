@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class IPCat
-  VERSION = '2.0.6'
+  VERSION = '2.0.12'
 end
