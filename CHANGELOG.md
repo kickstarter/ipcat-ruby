@@ -3,6 +3,14 @@
 See [Releases](https://github.com/kickstarter/ipcat-ruby/releases) for new
 changes.
 
+## v2.0.15 - 26 February 2018
+
+- Update datacenters
+
+## v2.0.14 - 26 January 2018
+
+- Update datacenters
+
 ## v2.0.13 - 26 December 2017
 
 - Update datacenters
