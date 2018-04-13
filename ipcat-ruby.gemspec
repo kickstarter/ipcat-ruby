@@ -7,6 +7,7 @@ require 'ipcat/version'
 Gem::Specification.new do |s|
   s.name = 'ipcat'
   s.version = IPCat::VERSION
+  s.licenses = ['MIT']
 
   s.authors = ['Aaron Suggs']
   s.description = 'A ruby port of the ipcat library: https://github.com/client9/ipcat/'
