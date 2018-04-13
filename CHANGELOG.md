@@ -3,6 +3,11 @@
 See [Releases](https://github.com/kickstarter/ipcat-ruby/releases) for new
 changes.
 
+## v2.0.17 - 13 April 2018
+
+- Update datacenters
+- Specify license in gem spec
+
 ## v2.0.16 - 2 April 2018
 
 - Update datacenters
