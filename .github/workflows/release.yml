@@ -1,0 +1,22 @@
+name: release
+on:
+  release:
+    types:
+      - published
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+      - run: gem install bundler
+      - run: bundle install --jobs 4 --retry 3
+      - run: bundle exec rake build
+      - run: |
+          cat << EOF > ~/.gem/credentials
+          ---
+          :rubygems_api_key: ${{ secrets.RUBYGEMS_API_KEY }}
+          EOF
+      - run: gem push pkg/*.gem

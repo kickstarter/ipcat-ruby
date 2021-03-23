@@ -1,0 +1,28 @@
+name: minitest
+on:
+  pull_request:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby:
+          - 2.2
+          - 2.3
+          - 2.4
+          - 2.5
+          - 2.6
+          - 2.7
+          - 3.0
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+      - run: gem install bundler
+        if: ${{ matrix.ruby >= 2.3 }}
+      - run: gem install bundler:1.17.3
+        if: ${{ matrix.ruby < 2.3 }}
+      - run: bundle install --jobs 4 --retry 3
+      - run: bundle exec rake
