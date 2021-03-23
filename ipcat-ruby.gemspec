@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.licenses = ['MIT']
 
   s.authors = ['Aaron Suggs']
-  s.description = 'A ruby port of the ipcat library: https://github.com/client9/ipcat/'
+  s.description = 'A ruby port of the ipcat library: https://github.com/rale/ipcat/'
   s.email = 'aaron@ktheory.com'
 
   s.files = Dir.glob('{bin,lib,data}/**/*') + %w[Rakefile README.md]

@@ -2,7 +2,7 @@
 
 ##
 # IPCat
-# Ruby lib for https://github.com/client9/ipcat/
+# Ruby lib for https://github.com/rale/ipcat/
 
 require 'ipaddr'
 require 'ipcat/iprange'
@@ -27,7 +27,7 @@ class IPCat
       @ranges = new_ranges
     end
 
-    def load_csv!(path = 'https://raw.github.com/client9/ipcat/master/datacenters.csv')
+    def load_csv!(path = 'https://raw.githubusercontent.com/rale/ipcat/master/datacenters.csv')
       reset_ranges!
 
       require 'open-uri'
