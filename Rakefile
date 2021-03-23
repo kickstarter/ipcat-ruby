@@ -32,3 +32,6 @@ task :bench do
     end
   end
 end
+
+# Ensure tests pass and dataset is generated before building
+task :build => %i[test generate_dataset]
