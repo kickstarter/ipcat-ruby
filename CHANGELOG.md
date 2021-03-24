@@ -1,7 +1,10 @@
 # Changelog
 
-See [Releases](https://github.com/kickstarter/ipcat-ruby/releases) for new
-changes.
+See [Releases](https://github.com/kickstarter/ipcat-ruby/releases) for new changes.
+
+## v2.0.22 - 23 March 2021
+
+- Update datacenters
 
 ## v2.0.21 - 8 March 2019
 
@@ -78,12 +81,13 @@ changes.
 
 ## v2.0.1 - 27 October 2014
 
- - revert ruby 2.0 requirement and custom `bsearch` method (it didn't work)
+- revert ruby 2.0 requirement and custom `bsearch` method (it didn't work)
 
 ## v2.0.0 - 26 October 2014
-  *NB: v2.0.0 has a critical bug that does not properly classify IP addresses. Use v2.0.1 instead*
 
- - Start maintaining a Changelog
- - Require ruby 2.0+
- - Replace custom `bsearch` method with ruby 2.0's Array#bsearch
- - Update datacenter CSV format (thanks @ankane)
+_NB: v2.0.0 has a critical bug that does not properly classify IP addresses. Use v2.0.1 instead_
+
+- Start maintaining a Changelog
+- Require ruby 2.0+
+- Replace custom `bsearch` method with ruby 2.0's Array#bsearch
+- Update datacenter CSV format (thanks @ankane)
