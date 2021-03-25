@@ -1,5 +1,6 @@
 name: autorev
 on:
+  push:
   schedule:
     - cron: "0 11 * * 3" # 11am UTC every Wednesday
 jobs:
@@ -16,5 +17,5 @@ jobs:
       - run: bundle install --jobs 4 --retry 3
       - run: git config user.email "no-reply@kickstarter.com"
       - run: git config user.name "GitHub Actions"
-      - run: gh auth login --with-token <( echo ${{ secrets.GITHUB_TOKEN }} )
+      - run: echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
       - run: bundle exec rake data:autorev
