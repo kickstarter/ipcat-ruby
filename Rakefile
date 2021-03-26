@@ -46,7 +46,7 @@ namespace :data do
         sh %{git add #{files}}
         sh %{git commit -m "#{title}\n\n#{body}"}
         sh %{git push #{remote} #{new_branch}}
-        sh %{gh pr create -B #{main_branch} -b #{body.inspect} -H #{new_branch} -t #{title.inspect}}
+        sh %{gh pr create -r kickstarter/infrastructure -B #{main_branch} -b #{body.inspect} -H #{new_branch} -t #{title.inspect}}
       else
         puts "data/datacenters is up-to-date."
       end
