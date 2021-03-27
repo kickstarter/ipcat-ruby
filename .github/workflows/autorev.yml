@@ -1,0 +1,20 @@
+name: autorev
+on:
+  schedule:
+    - cron: "0 11 * * 3" # 11am UTC every Wednesday
+jobs:
+  autorev:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+      - run: gem install bundler
+      - run: bundle install --jobs 4 --retry 3
+      - run: git config user.email "no-reply@kickstarter.com"
+      - run: git config user.name "GitHub Actions"
+      - run: echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
+      - run: bundle exec rake data:autorev
