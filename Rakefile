@@ -32,7 +32,7 @@ namespace :data do
   desc 'Automated task to open PR on dataset changes'
   task :autorev => %i[data/datacenters lib/ipcat/version.rb CHANGELOG.md], :order_only => :update do |t|
     files = t.prereqs.join(' ')
-    sh %{git diff --quiet #{files}} do |ok|
+    sh %{git diff --quiet data/datacenters} do |ok|
       unless ok
         # Get PR ready…
         main_branch = ENV['GIT_MAIN_BRANCH'] || 'master'
@@ -46,7 +46,7 @@ namespace :data do
         sh %{git add #{files}}
         sh %{git commit -m "#{title}\n\n#{body}"}
         sh %{git push #{remote} #{new_branch}}
-        sh %{gh pr create -r kickstarter/infrastructure -B #{main_branch} -b #{body.inspect} -H #{new_branch} -t #{title.inspect}}
+        sh %{gh pr create -B #{main_branch} -b #{body.inspect} -H #{new_branch} -t #{title.inspect}}
       else
         puts "data/datacenters is up-to-date."
       end
