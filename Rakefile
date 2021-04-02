@@ -35,7 +35,7 @@ namespace :data do
     sh %{git diff --quiet data/datacenters} do |ok|
       unless ok
         # Get PR ready…
-        main_branch = ENV['GIT_MAIN_BRANCH'] || 'master'
+        main_branch = ENV['GIT_MAIN_BRANCH'] || 'main'
         remote      = ENV['GIT_REMOTE']      || 'origin'
         new_branch  = "auto/update-dataset-#{Time.now.utc.to_i}"
         title       = "[autorev] ipcat v#{IPCat::VERSION}"
