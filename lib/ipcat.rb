@@ -11,6 +11,7 @@ require 'ipcat/version'
 class IPCat
   class << self
     def datacenter?(ip)
+      load! if ranges.empty?
       bsearch(ip_to_integer(ip))
     end
     alias classify datacenter?
@@ -38,11 +39,11 @@ class IPCat
       ranges.freeze
     end
 
-    def load!
+    def load!(path=nil)
       reset_ranges!
       # NB: loading an array of marshaled ruby objects takes ~15ms;
       # versus ~100ms to load a CSV file
-      path = File.join(File.dirname(__FILE__), '..', 'data', 'datacenters')
+      path ||= File.join(File.dirname(__FILE__), '..', 'data', 'datacenters')
       @ranges = Marshal.load(File.read(path))
       @ranges.each(&:freeze)
       @ranges.freeze
@@ -66,6 +67,3 @@ class IPCat
     end
   end
 end
-
-# Load dataset
-IPCat.load!
