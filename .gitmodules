@@ -1,0 +1,3 @@
+[submodule ".gitsubmodules/growlfm/ipcat"]
+	path = .gitsubmodules/growlfm/ipcat
+	url = https://github.com/growlfm/ipcat
