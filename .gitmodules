@@ -1,3 +1,0 @@
-[submodule ".gitsubmodules/rale/ipcat"]
-	path = .gitsubmodules/rale/ipcat
-	url = https://github.com/rale/ipcat.git
