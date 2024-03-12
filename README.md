@@ -1,6 +1,6 @@
 # ipcat-ruby
 
-A ruby port of the [ipcat](https://github.com/rale/ipcat) library to classify IP addresses from known datacenters
+A ruby port of the [ipcat](https://github.com/growlfm/ipcat) library to classify IP addresses from known datacenters
 
 [![gem](https://img.shields.io/gem/v/ipcat?color=crimson&logo=rubygems&logoColor=eee&style=flat)](https://rubygems.org/gems/ipcat)
 [![minitest](https://github.com/kickstarter/ipcat-ruby/actions/workflows/minitest.yml/badge.svg)](https://github.com/kickstarter/ipcat-ruby/actions/workflows/minitest.yml)
