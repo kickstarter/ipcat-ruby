@@ -101,7 +101,7 @@ end
 
 ##
 # Generate data/datacenters binary
-file 'data/datacenters' => '.gitsubmodules/rale/ipcat/datacenters.csv' do |f|
+file 'data/datacenters' => '.gitsubmodules/growlfm/ipcat/datacenters.csv' do |f|
   IPCat.load_csv!(path = f.prereqs.first)
   File.open(f.name, 'w') { |f| f << Marshal.dump(IPCat.ranges) }
 end
