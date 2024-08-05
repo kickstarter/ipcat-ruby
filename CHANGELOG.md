@@ -2,6 +2,10 @@
 
 See [Releases](https://github.com/kickstarter/ipcat-ruby/releases) for new changes.
 
+## v2.0.24 - 05 August 2024
+
+- Update datacenters
+
 ## v2.0.23 - 17 August 2023
 
 - Update datacenters
